@@ -100,6 +100,11 @@ class Simple_Slideshow_Public {
 
 	}
 
+	public function register_shortcodes() {
+		add_shortcode( 'simple_slideshow', array( $this, 'loop_simple_slideshow' ) );
+
+	}
+
 	public function add_simple_slideshow_post_type() {
 		register_post_type( 'simple-slideshow',
 			array(
@@ -125,6 +130,26 @@ class Simple_Slideshow_Public {
 				'menu_icon'   => 'dashicons-images-alt2',
 			)
 		);
+	}
+
+	public function loop_simple_slideshow(){
+		$args = ['post_type' => 'simple-slideshow'];
+		$simple_slideshow = new WP_Query( $args );
+
+		if(!$simple_slideshow->have_posts()){ ?>
+			<h2>Not Found.</h2>
+		<?php }
+		while ( $simple_slideshow->have_posts() ):
+
+			$id = get_the_id();
+			?>
+			<p><?php get_the_title(); ?></p>
+		<?php
+			//$image = get_post_meta( $id, 'simple-slideshow-image', true);
+			//echo $image;
+
+
+		endwhile;
 	}
 
 }

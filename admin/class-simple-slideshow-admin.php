@@ -49,7 +49,7 @@ class Simple_Slideshow_Admin {
 	 */
 	public function __construct( $simple_slideshow, $version ) {
 
-		$this->plugin_name = $simple_slideshow;
+		$this->simple_slideshow = $simple_slideshow;
 		$this->version = $version;
 
 	}
@@ -99,6 +99,8 @@ class Simple_Slideshow_Admin {
 		wp_enqueue_script( $this->simple_slideshow, plugin_dir_url( __FILE__ ) . 'js/simple-slideshow-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
+
+
 
 	public function add_simple_slideshow_meta_boxes() {
 
@@ -182,6 +184,7 @@ class Simple_Slideshow_Admin {
 			}
 		}
 	}
+
 	public function allow_image_upload() {
 		echo 'enctype="multipart/form-data"';
 	}
