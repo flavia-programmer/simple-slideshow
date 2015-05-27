@@ -101,7 +101,7 @@ class Simple_Slideshow_Public {
 	}
 
 	public function register_shortcodes() {
-		add_shortcode( 'simple_slideshow', array( $this, 'loop_simple_slideshow' ) );
+		add_shortcode( 'simple-slideshow', array( $this, 'loop_simple_slideshow' ) );
 
 	}
 
