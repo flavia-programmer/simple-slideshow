@@ -2,7 +2,11 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
-
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 .cb-slideshow{
     list-style: none;
     padding: 0;
@@ -20,7 +24,7 @@
     content: '';
     background: transparent url(pattern.png) repeat top left;
 }
-.cb-slideshow li span {
+.cb-slideshow li img {
     width: 100%;
     height: 100%;
     position: absolute;
