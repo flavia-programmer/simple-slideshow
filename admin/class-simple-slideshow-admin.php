@@ -96,7 +96,7 @@ class Simple_Slideshow_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->simple_slideshow, plugin_dir_url( __FILE__ ) . 'js/simple-slideshow-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->simple_slideshow, plugin_dir_url( __FILE__ ) . 'js/simple-slideshow-admin.js', array( 'jquery' ), $this->version, true );
 
 	}
 

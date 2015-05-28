@@ -139,7 +139,7 @@ class Simple_Slideshow_Public {
 		while ($query->have_posts()):$query->the_post();
 			$image = get_post_meta( get_the_ID(), 'simple-slideshow-image', true );
 			?>
-			<li><img src="<?php echo $image; ?>" alt=""/></li>
+			<li><img src="<?php echo $image; ?>" alt="simple-slideshow"/></li>
 		<?php
 		endwhile;
 		echo "<ul>";

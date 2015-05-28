@@ -3,3 +3,39 @@
  * included in this file.
  */
 
+.description-simple-slideshow-image{
+    overflow: auto;
+}
+.input-image{
+    padding: 3px 8px;
+    font-size: 1.7em;
+    line-height: 100%;
+    height: 1.7em;
+    width: 100%;
+    outline: 0;
+    margin: 0 0 3px;
+    background-color: #fff;
+}
+.view-images{
+    float: left;
+}
+.delete-images{
+    float: right;
+}
+.delete-images, .view-images{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #0073aa;
+    font-size: 13px;
+    font-style: italic;
+
+}
+.delete-images:hover,.view-images:hover{
+    color: #00a0d2;
+}
+
+.thumbnail-simple-slideshow{
+    width: 20%;
+    margin-left: 20px;
+    display: none;
+}
