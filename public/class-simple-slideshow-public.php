@@ -100,6 +100,7 @@ class Simple_Slideshow_Public {
 
 	}
 
+
 	public function add_simple_slideshow_post_type() {
 		register_post_type( 'simple-slideshow',
 			array(
@@ -125,4 +126,23 @@ class Simple_Slideshow_Public {
 			)
 		);
 	}
+
+	public function register_shortcodes() {
+		add_shortcode( 'simple-slideshow', array( $this, 'loop_simple_slideshow' ) );
+	}
+
+	public function loop_simple_slideshow() {
+		$args = ['post_type' => 'simple-slideshow'];
+
+		$query      = new WP_Query( $args );
+		echo "<ul class='cb-slideshow'>";
+		while ($query->have_posts()):$query->the_post();
+			$image = get_post_meta( get_the_ID(), 'simple-slideshow-image', true );
+			?>
+			<li><img src="<?php echo $image; ?>" alt=""/></li>
+		<?php
+		endwhile;
+		echo "<ul>";
+	}
+
 }
